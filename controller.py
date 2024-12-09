@@ -5,7 +5,7 @@ port = 38899
 sock = ''
 
 def changeColor(ip, r, g, b, dim):
-    msg = '{"method":"setPilot", "params":{"r":r,"g":g,"b":b,"dimming":dim}}'
+    msg = '{{"method":"setPilot", "params":{{"r":{},"g":{},"b":{},"dimming":{}}}}}'.format(r, g, b, dim)
     sock.sendto(bytes(msg, 'utf-8'), (ip, port))
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
